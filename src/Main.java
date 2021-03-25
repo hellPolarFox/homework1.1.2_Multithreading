@@ -14,16 +14,16 @@ public class Main {
             tasks.add(new MyCallable());
         }
 
-        //SolutionWithInvokeAny();
-        SolutionWithInvokeAll();
+        //solutionWithInvokeAny();
+        solutionWithInvokeAll();
     }
 
-    public static void SolutionWithInvokeAny() throws ExecutionException, InterruptedException {
+    public static void solutionWithInvokeAny() throws ExecutionException, InterruptedException {
         System.out.println(threadPool.invokeAny(tasks));
         threadPool.shutdown();
     }
 
-    public static void SolutionWithInvokeAll() throws ExecutionException, InterruptedException {
+    public static void solutionWithInvokeAll() throws ExecutionException, InterruptedException {
         List<Future<String>> results = threadPool.invokeAll(tasks);
         for (Future<String> f : results) {
             String result2 = f.get();
